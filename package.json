@@ -1,0 +1,27 @@
+{
+  "name": "mednorm-ai-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "1.2.1",
+    "framer-motion": "10.12.16",
+    "gsap": "3.12.2",
+    "lucide-react": "0.257.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.30.3",
+    "recharts": "2.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.31",
+    "tailwindcss": "^3.4.7",
+    "vite": "^4.3.9"
+  }
+}

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: linear-gradient(180deg,#ffffff,#f8fafc);
+  --bg-solid: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: rgba(2,6,23,0.04);
+  --card-bg: rgba(255,255,255,0.5);
+  --accent: #00d2ff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.dark {
+  --bg: linear-gradient(180deg,#03060a,#000000);
+  --bg-solid: #000000;
+  --text: #e6f6fb;
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.04);
+  --card-bg: rgba(10,20,28,0.6);
+  --accent: #09a8a8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  background: var(--card-bg, rgba(255,255,255,0.05));
+  backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid var(--glass-border, rgba(255,255,255,0.06));
+}
+
+.glass-dark { /* legacy class kept */ }
+
+.bg-card {
+  background: var(--card-bg);
+}
+
+.text-primary { color: var(--text); }
+.text-muted { color: var(--muted); }
+.accent { color: var(--accent); }
+
+.neon {
+  box-shadow: 0 20px 50px rgba(0,210,255,0.06), 0 6px 24px rgba(9,168,168,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* 3D perspective helpers */
+.scene {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+}
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2,.9,.3,1), box-shadow 0.3s;
+}
+.card-3d:hover {
+  transform: translateZ(30px) rotateX(3deg) rotateY(-6deg);
+  box-shadow: 0 30px 80px rgba(0,210,255,0.08);
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.particle {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0,210,255,0.16), rgba(9,168,168,0.08));
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Lux black background for Story page */
+.lux-bg {
+  background: radial-gradient(800px 400px at 10% 10%, rgba(0,210,255,0.02), transparent),
+              radial-gradient(600px 300px at 90% 80%, rgba(9,168,168,0.02), transparent),
+              linear-gradient(180deg,#02040a,#000000);
+}
+
+.story-step {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.sticky-panel {
+  position: sticky;
+  top: 12vh;
+}
+
+.visual-card {
+  transform-origin: center center;
+}
